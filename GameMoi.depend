@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1525183948 source:c:\users\admin\desktop\gamemoi\main.cpp
+1525185713 source:c:\users\admin\desktop\gamemoi\main.cpp
 	<iostream>
 	<ctime>
 	"PlayGame.h"
@@ -138,6 +138,6 @@
 	"UpLoadGame.h"
 	"In4Game.h"
 
-1525183940 source:c:\users\admin\desktop\gamemoi\src\playgame.cpp
+1525185740 source:c:\users\admin\desktop\gamemoi\src\playgame.cpp
 	"PlayGame.h"
 

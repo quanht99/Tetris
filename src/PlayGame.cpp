@@ -22,8 +22,8 @@ int PlayGame :: VongGame()
 
     string arr;
     console.gotoXY(60,5);
-    cout << "Nhap Ten Nguoi Choi; ";
-    getline(cin,arr);
+    cout << "Nhap Ten Nguoi Choi: ";
+    cin >> arr;
     console.clrscr();
     Thongtin INFOR;
     In4.CreatIn4(&INFOR);

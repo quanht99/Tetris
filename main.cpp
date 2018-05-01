@@ -73,30 +73,33 @@ int main()
 //    Design.HuyKhoiGach(curr);
         PlayGame Play;
         console console;
-        if(Play.VongGame()==1)
+        while(1)
         {
-//            while(1)
-//            {
-//                if(_kbhit())
-//                {
-//                    char c=_getch();
-//                    if(c=='t')
-//                        {
-//                            console.clrscr();
-//                            Play.VongGame();
-//                        }
-//                    if(c=='m')
-//                        return 0;
-//                }
-//            }
-            string YesNo;
-            cin >> YesNo;
-            if(YesNo=="Yes" || YesNo=="YES")
+            if(Play.VongGame()==1)
             {
-                console.clrscr();
-                Play.VongGame();
+    //            while(1)
+    //            {
+    //                if(_kbhit())
+    //                {
+    //                    char c=_getch();
+    //                    if(c=='t')
+    //                        {
+    //                            console.clrscr();
+    //                            Play.VongGame();
+    //                        }
+    //                    if(c=='m')
+    //                        return 0;
+    //                }
+    //            }
+                char YesNo;
+                cin >> YesNo;
+                if(YesNo=='Y')
+                {
+                    console.clrscr();
+                }
+                if(YesNo=='N')
+                    break;
             }
-            else
-                return 0;
         }
+        return 0;
 }
