@@ -1,15 +1,11 @@
 # depslib dependency file v1.0
-1525161726 source:c:\users\admin\desktop\gamemoi\main.cpp
+1525183948 source:c:\users\admin\desktop\gamemoi\main.cpp
 	<iostream>
 	<ctime>
+	"PlayGame.h"
 	"console.h"
-	"DesignBrick.h"
-	"Draw.h"
-	"MoveBrick.h"
-	"UpLoadGame.h"
-	"In4Game.h"
 
-1525160662 source:c:\users\admin\desktop\gamemoi\src\designbrick.cpp
+1525165989 source:c:\users\admin\desktop\gamemoi\src\designbrick.cpp
 	"DesignBrick.h"
 
 1525160662 c:\users\admin\desktop\gamemoi\include\designbrick.h
@@ -25,7 +21,7 @@
 	<cstdlib>
 	<windows.h>
 
-1525161938 source:c:\users\admin\desktop\gamemoi\src\draw.cpp
+1525162787 source:c:\users\admin\desktop\gamemoi\src\draw.cpp
 	"Draw.h"
 
 1525160447 c:\users\admin\desktop\gamemoi\include\draw.h
@@ -53,10 +49,10 @@
 	"Check.h"
 	"DesignBrick.h"
 
-1525156734 source:c:\users\admin\desktop\gamemoi\src\in4game.cpp
+1525163391 source:c:\users\admin\desktop\gamemoi\src\in4game.cpp
 	"In4Game.h"
 
-1525155352 c:\users\admin\desktop\gamemoi\include\in4game.h
+1525165716 c:\users\admin\desktop\gamemoi\include\in4game.h
 	<iostream>
 	"DesignBrick.h"
 	"Check.h"
@@ -133,4 +129,15 @@
 	"MoveBrick.h"
 	"UpLoadGame.h"
 	"In4Game.h"
+
+1525165723 c:\users\admin\desktop\gamemoi\include\playgame.h
+	"console.h"
+	"DesignBrick.h"
+	"Draw.h"
+	"MoveBrick.h"
+	"UpLoadGame.h"
+	"In4Game.h"
+
+1525183940 source:c:\users\admin\desktop\gamemoi\src\playgame.cpp
+	"PlayGame.h"
 
