@@ -1,0 +1,65 @@
+# depslib dependency file v1.0
+1525161726 source:c:\users\admin\desktop\gamemoi\main.cpp
+	<iostream>
+	<ctime>
+	"console.h"
+	"DesignBrick.h"
+	"Draw.h"
+	"MoveBrick.h"
+	"UpLoadGame.h"
+	"In4Game.h"
+
+1525160662 source:c:\users\admin\desktop\gamemoi\src\designbrick.cpp
+	"DesignBrick.h"
+
+1525160662 c:\users\admin\desktop\gamemoi\include\designbrick.h
+	<stdlib.h>
+	"ctime"
+
+1524738287 source:c:\users\admin\desktop\gamemoi\src\console.cpp
+	"console.h"
+
+1524738287 c:\users\admin\desktop\gamemoi\include\console.h
+	<conio.h>
+	<ctime>
+	<cstdlib>
+	<windows.h>
+
+1525161938 source:c:\users\admin\desktop\gamemoi\src\draw.cpp
+	"Draw.h"
+
+1525160447 c:\users\admin\desktop\gamemoi\include\draw.h
+	<iostream>
+	"console.h"
+	"DesignBrick.h"
+	"Check.h"
+
+1525160043 source:c:\users\admin\desktop\gamemoi\src\movebrick.cpp
+	"MoveBrick.h"
+
+1525054115 c:\users\admin\desktop\gamemoi\include\movebrick.h
+	"DesignBrick.h"
+	"Check.h"
+
+1525143675 source:c:\users\admin\desktop\gamemoi\src\check.cpp
+	"Check.h"
+
+1525053864 c:\users\admin\desktop\gamemoi\include\check.h
+
+1525100669 source:c:\users\admin\desktop\gamemoi\src\uploadgame.cpp
+	"UpLoadGame.h"
+
+1525099655 c:\users\admin\desktop\gamemoi\include\uploadgame.h
+	"Check.h"
+	"DesignBrick.h"
+
+1525156734 source:c:\users\admin\desktop\gamemoi\src\in4game.cpp
+	"In4Game.h"
+
+1525155352 c:\users\admin\desktop\gamemoi\include\in4game.h
+	<iostream>
+	"DesignBrick.h"
+	"Check.h"
+	"UpLoadGame.h"
+	"console.h"
+
