@@ -158,7 +158,7 @@ void Draw :: Ve_Next(int ID)
 		}
 
 	}
-	HuyKhoiGach(pnext);
+	DesignBrick::HuyKhoiGach(pnext);
 }
 
 void Draw :: Xoa_Next()

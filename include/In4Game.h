@@ -15,7 +15,7 @@ struct Thongtin{
 };
 
 
-class In4Game: public DesignBrick, public UpLoadGame,public console
+class In4Game:public UpLoadGame,public console
 {
     public:
         In4Game();

@@ -39,6 +39,7 @@
 		<Unit filename="include/Draw.h" />
 		<Unit filename="include/In4Game.h" />
 		<Unit filename="include/MoveBrick.h" />
+		<Unit filename="include/PlayGame.h" />
 		<Unit filename="include/UpLoadGame.h" />
 		<Unit filename="include/console.h" />
 		<Unit filename="main.cpp" />
@@ -47,6 +48,7 @@
 		<Unit filename="src/Draw.cpp" />
 		<Unit filename="src/In4Game.cpp" />
 		<Unit filename="src/MoveBrick.cpp" />
+		<Unit filename="src/PlayGame.cpp" />
 		<Unit filename="src/UpLoadGame.cpp" />
 		<Unit filename="src/console.cpp" />
 		<Extensions>

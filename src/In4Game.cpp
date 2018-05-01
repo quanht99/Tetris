@@ -55,7 +55,7 @@ int In4Game :: KiemTra(KhoiGach *pkhoigach, Thongtin *inforgame)
 
  bool In4Game :: capnhat(Thongtin *info, int score)
  {
-     if(info->score>=(1100-info->level))
+     if(info->score>=(1099-info->level))
         info->level-=100;
      info->score+=score;
      return true;

@@ -63,3 +63,74 @@
 	"UpLoadGame.h"
 	"console.h"
 
+1525183948 source:c:\users\admin\desktop\game1\main.cpp
+	<iostream>
+	<ctime>
+	"PlayGame.h"
+	"console.h"
+
+1524738287 c:\users\admin\desktop\game1\include\console.h
+	<conio.h>
+	<ctime>
+	<cstdlib>
+	<windows.h>
+
+1525160662 c:\users\admin\desktop\game1\include\designbrick.h
+	<stdlib.h>
+	"ctime"
+
+1525160447 c:\users\admin\desktop\game1\include\draw.h
+	<iostream>
+	"console.h"
+	"DesignBrick.h"
+	"Check.h"
+
+1525053864 c:\users\admin\desktop\game1\include\check.h
+
+1525054115 c:\users\admin\desktop\game1\include\movebrick.h
+	"DesignBrick.h"
+	"Check.h"
+
+1525099655 c:\users\admin\desktop\game1\include\uploadgame.h
+	"Check.h"
+	"DesignBrick.h"
+
+1525165716 c:\users\admin\desktop\game1\include\in4game.h
+	<iostream>
+	"DesignBrick.h"
+	"Check.h"
+	"UpLoadGame.h"
+	"console.h"
+
+1525143675 source:c:\users\admin\desktop\game1\src\check.cpp
+	"Check.h"
+
+1524738287 source:c:\users\admin\desktop\game1\src\console.cpp
+	"console.h"
+
+1525165989 source:c:\users\admin\desktop\game1\src\designbrick.cpp
+	"DesignBrick.h"
+
+1525163391 source:c:\users\admin\desktop\game1\src\in4game.cpp
+	"In4Game.h"
+
+1525160043 source:c:\users\admin\desktop\game1\src\movebrick.cpp
+	"MoveBrick.h"
+
+1525100669 source:c:\users\admin\desktop\game1\src\uploadgame.cpp
+	"UpLoadGame.h"
+
+1525162787 source:c:\users\admin\desktop\game1\src\draw.cpp
+	"Draw.h"
+
+1525183940 source:c:\users\admin\desktop\game1\src\playgame.cpp
+	"PlayGame.h"
+
+1525165723 c:\users\admin\desktop\game1\include\playgame.h
+	"console.h"
+	"DesignBrick.h"
+	"Draw.h"
+	"MoveBrick.h"
+	"UpLoadGame.h"
+	"In4Game.h"
+

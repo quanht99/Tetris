@@ -37,10 +37,10 @@ KhoiGach *DesignBrick :: TaoKhoiGach(int ID)
         pkhoigach->jBoard=1;
         break;
     }
-    pkhoigach->arr=new int*;
+    pkhoigach->arr=new int *[pkhoigach->Row];
     for(int i=0; i<pkhoigach->Row; i++)
     {
-        pkhoigach->arr[i] = new int ;
+        pkhoigach->arr[i] = new int [pkhoigach->Col];
     }
     for(int k=0; k<pkhoigach->Col*pkhoigach->Row; k++)
     {
