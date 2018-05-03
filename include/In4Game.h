@@ -9,7 +9,8 @@
 
 using namespace std;
 
-struct Thongtin{
+struct Thongtin
+{
     int level;
     int score;
 };
@@ -17,21 +18,21 @@ struct Thongtin{
 
 class In4Game:public UpLoadGame,public console
 {
-    public:
-        In4Game();
-        virtual ~In4Game();
+public:
+    In4Game();
+    virtual ~In4Game();
 
-        int KiemTra(KhoiGach *pkhoigach,Thongtin *infogame) ;
+    int KiemTra(KhoiGach *pkhoigach,Thongtin *infogame) ;
 
-        void CreatIn4(Thongtin *info);
+    void CreatIn4(Thongtin *info);
 
-        void DrawScore(Thongtin infor);
+    void DrawScore(Thongtin infor);
 
-        bool capnhat(Thongtin *info, int score);
+    bool capnhat(Thongtin *info, int score);
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // IN4GAME_H

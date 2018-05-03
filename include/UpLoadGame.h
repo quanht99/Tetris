@@ -6,17 +6,17 @@
 
 class UpLoadGame: public Check, public DesignBrick
 {
-    public:
-        UpLoadGame();
-        virtual ~UpLoadGame();
+public:
+    UpLoadGame();
+    virtual ~UpLoadGame();
 
-         void CapNhatLaiToaDo(int hang);
+    void CapNhatLaiToaDo(int hang);
 
-        void GanGiaTri(KhoiGach* pkhoigach);
+    void GanGiaTri(KhoiGach* pkhoigach);
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // UPLOADGAME_H

@@ -5,23 +5,23 @@
 
 class MoveBrick: public DesignBrick, public Check
 {
-    public:
-        MoveBrick();
-        virtual ~MoveBrick();
+public:
+    MoveBrick();
+    virtual ~MoveBrick();
 
-        void SangTrai(KhoiGach *pkhoigach); //dich khối gạch sang trái
+    void SangTrai(KhoiGach *pkhoigach); //dich khối gạch sang trái
 
-        void SangPhai(KhoiGach *pkhoigach); //dịch khối gạch sang phải
+    void SangPhai(KhoiGach *pkhoigach); //dịch khối gạch sang phải
 
-        int RoiXuong(KhoiGach *pkhoigach); //rơi xuống 1 ô;
+    int RoiXuong(KhoiGach *pkhoigach); //rơi xuống 1 ô;
 
-        void XoayKhoiGach(KhoiGach* pkhoigach); // Xoay khoi gach
+    void XoayKhoiGach(KhoiGach* pkhoigach); // Xoay khoi gach
 
 
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // MOVEBRICK_H

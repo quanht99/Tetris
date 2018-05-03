@@ -4,6 +4,7 @@
 #include<stdlib.h>
 #include "ctime"
 
+//Luu hinh dang cua khoi gach
 struct KhoiGach
 {
     int **arr;

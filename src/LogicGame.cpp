@@ -1,17 +1,17 @@
-#include "PlayGame.h"
+#include "LogicGame.h"
 
 
-PlayGame::PlayGame()
+LogicGame::LogicGame()
 {
     //ctor
 }
 
-PlayGame::~PlayGame()
+LogicGame::~LogicGame()
 {
     //dtor
 }
 
-int PlayGame :: VongGame()
+int LogicGame :: VongGame()
 {
     MoveBrick Move1;
     DesignBrick Design;
@@ -19,24 +19,27 @@ int PlayGame :: VongGame()
     UpLoadGame Upload;
     console console;
     In4Game In4;
+    Thongtin INFOR;
 
     string arr;
+    clock_t Start, End;
+    KhoiGach* curr;
+    int IDKhoiTiepTheo=Design.Loai();
+    //Lay thong tin nguoi choi
     console.gotoXY(60,5);
     cout << "Nhap Ten Nguoi Choi: ";
     cin >> arr;
     console.clrscr();
-    Thongtin INFOR;
+    //Bat Dau
     In4.CreatIn4(&INFOR);
-    clock_t Start, End;
-    KhoiGach* curr;
     Draw1.VeKhung();
-    int IDKhoiTiepTheo=Design.Loai();
+    srand(time(NULL));
     curr=Design.TaoKhoiGach(Design.Loai());
-    //Draw1.VeKhoiGach(curr);
-    //Draw1.XoaKhoiGach(curr);
-    for(int i=1;i<=20;i++)
+
+    //Khoi tao gia tri cho mang luu thong tin tro choi
+    for(int i=1; i<=20; i++)
     {
-        for(int j=1;j<=10;j++)
+        for(int j=1; j<=10; j++)
             Board[i][j]=0;
     }
 
@@ -45,7 +48,7 @@ int PlayGame :: VongGame()
         Draw1.VeKhoiGach(curr);
         In4.DrawScore(INFOR);
         Draw1.Xoa_Next();
-		Draw1.Ve_Next(IDKhoiTiepTheo);
+        Draw1.Ve_Next(IDKhoiTiepTheo);
         Start=clock();
         do
         {
@@ -60,11 +63,14 @@ int PlayGame :: VongGame()
                 if(kitu=='d' || kitu==77)
                     Move1.SangPhai(curr);
                 if(kitu=='w' || kitu==72 )
-                    {Move1.XoayKhoiGach(curr);}
+                {
+                    Move1.XoayKhoiGach(curr);
+                }
                 Draw1.VeKhoiGach(curr);
             }
             End=clock();
-        }while(End-Start<INFOR.level);
+        }
+        while(End-Start<INFOR.level);
         Draw1.XoaKhoiGach(curr);
         if(Move1.RoiXuong(curr)!=1)
         {
@@ -72,6 +78,7 @@ int PlayGame :: VongGame()
 
             if(In4.KiemTra(curr, &INFOR)==-1)
                 break;
+
             Design.HuyKhoiGach(curr);
             In4.DrawScore(INFOR);
             curr=Design.TaoKhoiGach(IDKhoiTiepTheo);
@@ -82,6 +89,7 @@ int PlayGame :: VongGame()
     while(1);
     Design.HuyKhoiGach(curr);
     console.clrscr();
+    console.TextColor(7);
     console.gotoXY(50,5);
     cout << "Ten: " << arr ;
     console.gotoXY(50,6);
@@ -89,6 +97,6 @@ int PlayGame :: VongGame()
     console.gotoXY(50,7);
     cout << "Game Over";
     console.gotoXY(50,8);
-    cout << "Ban co muon tiep tuc choi(YES/NO): ";
+    cout << "Ban co muon tiep tuc choi(Y/N): ";
     return 1;
 }

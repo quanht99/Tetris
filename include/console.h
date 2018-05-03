@@ -33,9 +33,6 @@
 #include <ctime>
 #include <cstdlib>
 
-
-//--------------------------------------------------------
-
 #include <windows.h>
 
 
@@ -45,15 +42,9 @@ public:
     console();
     virtual ~console();
 
-    int inputKey();
-
     void clrscr();
 
     void gotoXY (int column, int line);
-
-    int whereX();
-
-    int whereY();
 
     void TextColor (int color);
 

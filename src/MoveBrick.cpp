@@ -64,44 +64,44 @@ void MoveBrick :: XoayKhoiGach(KhoiGach* pkhoigach)
         tmpArr[i]=new int [tmpCol];
     }
     ///////////////////////////////////////////////
-
-    if(pkhoigach->Col!=4&&pkhoigach->Col!=1)
-    {
-        for(i=pkhoigach->Row-1; i>=0; i--)
-            for(j=pkhoigach->Col-1; j>=0; j--)
-            {
-                tmpArr[j][pkhoigach->Row-i-1]=pkhoigach->arr[i][j];
-            }
-    }
-    else
-    {
-        if(pkhoigach->Row==1)
+    for(i=pkhoigach->Row-1; i>=0; i--)
+        for(j=pkhoigach->Col-1; j>=0; j--)
         {
-            for(int i=0;i<pkhoigach->Col;i++)
-                tmpArr[i][0]=pkhoigach->arr[0][i];
+            tmpArr[j][pkhoigach->Row-i-1]=pkhoigach->arr[i][j];
         }
-        else
-        {
-            for(int i=0;i<pkhoigach->Row;i++)
-                {
-                    tmpArr[0][i]=pkhoigach->arr[i][0];
-
-                }
-        }
-    }
+//    if(pkhoigach->Col!=4&&pkhoigach->Col!=1)
+//    {
+//
+//    }
+//    else
+//    {
+//        if(pkhoigach->Row==1)
+//        {
+//            for(int i=0; i<pkhoigach->Col; i++)
+//                tmpArr[i][0]=pkhoigach->arr[0][i];
+//        }
+//        else
+//        {
+//            for(int i=0; i<pkhoigach->Row; i++)
+//            {
+//                tmpArr[0][i]=pkhoigach->arr[i][0];
+//
+//            }
+//        }
+//    }
 
     //Kiểm tra hợp lệ.
     if(pkhoigach->iBoard>=9)
-            pkhoigach->iBoard-=1;
+        pkhoigach->iBoard-=1;
     for (i=0; i<tmpRow; i++)
     {
         for(j=0; j<tmpCol; j++)
-            {
+        {
 
 
-                if(Check :: Inside(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false || Board[pkhoigach->jBoard+j][pkhoigach->iBoard+i]==1)
-                    return;
-            }
+            if(Check :: Inside(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false || Board[pkhoigach->jBoard+j][pkhoigach->iBoard+i]==1)
+                return;
+        }
     }
     for(i=0; i<pkhoigach->Row; i++)
         delete(pkhoigach->arr[i]);

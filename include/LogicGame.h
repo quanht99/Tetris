@@ -8,18 +8,19 @@
 #include "In4Game.h"
 
 
-class PlayGame:public Draw, public In4Game, public MoveBrick
+
+class LogicGame:public Draw, public In4Game, public MoveBrick
 {
-    public:
-        PlayGame();
-        virtual ~PlayGame();
+public:
+    LogicGame();
+    virtual ~LogicGame();
 
 
-        int VongGame();
+    int VongGame();
 
-    protected:
+protected:
 
-    private:
+private:
 };
 
 #endif // PLAYGAME_H
