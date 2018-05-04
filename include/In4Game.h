@@ -22,13 +22,13 @@ public:
     In4Game();
     virtual ~In4Game();
 
-    int KiemTra(KhoiGach *pkhoigach,Thongtin *infogame) ;
+    int CkeckGame(KhoiGach *pkhoigach,Thongtin *infogame) ;
 
     void CreatIn4(Thongtin *info);
 
     void DrawScore(Thongtin infor);
 
-    bool capnhat(Thongtin *info, int score);
+    bool UpDateScore(Thongtin *info, int score);
 
 protected:
 

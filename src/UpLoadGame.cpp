@@ -10,7 +10,7 @@ UpLoadGame::~UpLoadGame()
     //dtor
 }
 
-void UpLoadGame :: CapNhatLaiToaDo(int hang)
+void UpLoadGame :: UpdateLocation(int hang)
 {
     int i,j;
     for(i=hang; i>1; i--)
@@ -20,7 +20,7 @@ void UpLoadGame :: CapNhatLaiToaDo(int hang)
         }
 }
 
-void UpLoadGame :: GanGiaTri(KhoiGach* pkhoigach)
+void UpLoadGame :: SaveValue(KhoiGach* pkhoigach)
 {
     for(int i=0; i<pkhoigach->Row; i++)
         for(int j=0; j<pkhoigach->Col; j++)

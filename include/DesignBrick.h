@@ -18,11 +18,11 @@ public:
     DesignBrick();
     virtual ~DesignBrick();
 
-    KhoiGach *TaoKhoiGach(int ID);
+    KhoiGach *CreatBrick(int ID);
 
-    void HuyKhoiGach(KhoiGach* pkhoigach);
+    void Delete_Object(KhoiGach* pkhoigach);
 
-    int Loai();
+    int NumRandom();//random ra cac so tuong ung voi hinh dang ca khoi gach
 
 protected:
 

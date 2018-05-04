@@ -15,12 +15,18 @@ public:
     Draw();
     virtual ~Draw();
 
-    void VeKhung();
+    void DrawFrame();
+
     void DisplayBoard();
-    void VeKhoiGach(KhoiGach*);
-    void XoaKhoiGach(KhoiGach*);
-    void Ve_Next(int ID);
-    void Xoa_Next();
+
+    void DrawBrick(KhoiGach*);
+
+    void DeleteBrick(KhoiGach*);
+
+    void DrawBrick_Next(int ID);
+
+    void DeleteBrick_Next();
+
 protected:
 
 private:

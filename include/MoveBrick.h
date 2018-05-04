@@ -9,13 +9,13 @@ public:
     MoveBrick();
     virtual ~MoveBrick();
 
-    void SangTrai(KhoiGach *pkhoigach); //dich khối gạch sang trái
+    void moveLeft(KhoiGach *pkhoigach); //dich khối gạch sang trái
 
-    void SangPhai(KhoiGach *pkhoigach); //dịch khối gạch sang phải
+    void moveRight(KhoiGach *pkhoigach); //dịch khối gạch sang phải
 
-    int RoiXuong(KhoiGach *pkhoigach); //rơi xuống 1 ô;
+    int moveDown(KhoiGach *pkhoigach); //rơi xuống 1 ô;
 
-    void XoayKhoiGach(KhoiGach* pkhoigach); // Xoay khoi gach
+    void turnBrick(KhoiGach* pkhoigach); // Xoay khoi gach
 
 
 

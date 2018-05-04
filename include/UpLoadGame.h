@@ -10,9 +10,9 @@ public:
     UpLoadGame();
     virtual ~UpLoadGame();
 
-    void CapNhatLaiToaDo(int hang);
+    void UpdateLocation(int hang);
 
-    void GanGiaTri(KhoiGach* pkhoigach);
+    void SaveValue(KhoiGach* pkhoigach);
 
 protected:
 

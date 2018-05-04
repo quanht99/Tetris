@@ -11,13 +11,13 @@ MoveBrick::~MoveBrick()
     //dtor
 }
 //Row la cot, Col la hang
-void MoveBrick :: SangTrai( KhoiGach *pkhoigach )
+void MoveBrick :: moveLeft( KhoiGach *pkhoigach )
 {
     for(int i = 0; i < pkhoigach->Row ; i++ )
         for(int j=0; j<pkhoigach->Col; j++)
             if(pkhoigach->arr[i][j]==1)
             {
-                if(Check::Left(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false)
+                if(Check::CheckLeft(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false)
                     return;
             }
 
@@ -25,33 +25,33 @@ void MoveBrick :: SangTrai( KhoiGach *pkhoigach )
 
 }
 
-void MoveBrick :: SangPhai(KhoiGach *pkhoigach)
+void MoveBrick :: moveRight(KhoiGach *pkhoigach)
 {
     for(int i=0; i<pkhoigach->Row; i++)
         for(int j=0; j<pkhoigach->Col; j++)
             if(pkhoigach->arr[i][j]==1)
             {
-                if(Check::Right(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false)
+                if(Check::CheckRight(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false)
                     return;
             }
 
     pkhoigach->iBoard+=1;
 }
 
-int MoveBrick :: RoiXuong(KhoiGach *pkhoigach)  //0 : không thể rơi xuống,1 : có thể rơi xuống.
+int MoveBrick :: moveDown(KhoiGach *pkhoigach)  //0 : không thể rơi xuống,1 : có thể rơi xuống.
 {
     for(int i=0; i<pkhoigach->Row; i++)
         for(int j=0; j<pkhoigach->Col; j++)
             if(pkhoigach->arr[i][j]==1)
             {
-                if(Check :: Down(pkhoigach->iBoard+j,pkhoigach->jBoard+i)==false)
+                if(Check :: CheckDown(pkhoigach->iBoard+j,pkhoigach->jBoard+i)==false)
                     return 0;
             }
     pkhoigach->jBoard+=1; //Roi xuong 1 so voi Board[20][10]
     return 1;
 }
 
-void MoveBrick :: XoayKhoiGach(KhoiGach* pkhoigach)
+void MoveBrick :: turnBrick(KhoiGach* pkhoigach)
 {
     int i,j;
     int ** tmpArr;
@@ -69,37 +69,19 @@ void MoveBrick :: XoayKhoiGach(KhoiGach* pkhoigach)
         {
             tmpArr[j][pkhoigach->Row-i-1]=pkhoigach->arr[i][j];
         }
-//    if(pkhoigach->Col!=4&&pkhoigach->Col!=1)
-//    {
-//
-//    }
-//    else
-//    {
-//        if(pkhoigach->Row==1)
-//        {
-//            for(int i=0; i<pkhoigach->Col; i++)
-//                tmpArr[i][0]=pkhoigach->arr[0][i];
-//        }
-//        else
-//        {
-//            for(int i=0; i<pkhoigach->Row; i++)
-//            {
-//                tmpArr[0][i]=pkhoigach->arr[i][0];
-//
-//            }
-//        }
-//    }
+
 
     //Kiểm tra hợp lệ.
     if(pkhoigach->iBoard>=9)
         pkhoigach->iBoard-=1;
+    if(pkhoigach->iBoard>7 && pkhoigach->Row==4)
+        pkhoigach->iBoard=7;
     for (i=0; i<tmpRow; i++)
     {
         for(j=0; j<tmpCol; j++)
         {
 
-
-            if(Check :: Inside(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false || Board[pkhoigach->jBoard+j][pkhoigach->iBoard+i]==1)
+            if(Check :: CheckInside(pkhoigach->iBoard+j,pkhoigach->jBoard+i) == false || Board[pkhoigach->jBoard+i][pkhoigach->iBoard+j+1]==1)
                 return;
         }
     }

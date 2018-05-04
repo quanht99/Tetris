@@ -13,7 +13,7 @@ DesignBrick::~DesignBrick()
 }
 
 
-KhoiGach *DesignBrick :: TaoKhoiGach(int ID)
+KhoiGach *DesignBrick :: CreatBrick(int ID)
 {
     KhoiGach *pkhoigach;
     pkhoigach = new KhoiGach;
@@ -49,7 +49,7 @@ KhoiGach *DesignBrick :: TaoKhoiGach(int ID)
     return pkhoigach;
 }
 
-int DesignBrick :: Loai()
+int DesignBrick :: NumRandom()
 {
     srand(time(NULL));
     int x=rand()%7;
@@ -79,7 +79,7 @@ int DesignBrick :: Loai()
     }
 }
 
-void DesignBrick :: HuyKhoiGach(KhoiGach* pkhoigach)
+void DesignBrick :: Delete_Object(KhoiGach* pkhoigach)
 {
     int i;
     //Huy bo nho cua ma tran trang thai arr.

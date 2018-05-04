@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1525343983 source:c:\users\admin\desktop\gamemoi\main.cpp
+1525413050 source:c:\users\admin\desktop\gamemoi\main.cpp
 	<iostream>
 	<ctime>
 	"LogicGame.h"
 	"console.h"
 
-1525344165 source:c:\users\admin\desktop\gamemoi\src\designbrick.cpp
+1525400695 source:c:\users\admin\desktop\gamemoi\src\designbrick.cpp
 	"DesignBrick.h"
 
-1525337434 c:\users\admin\desktop\gamemoi\include\designbrick.h
+1525400739 c:\users\admin\desktop\gamemoi\include\designbrick.h
 	<stdlib.h>
 	"ctime"
 
@@ -21,39 +21,39 @@
 	<cstdlib>
 	<windows.h>
 
-1525344033 source:c:\users\admin\desktop\gamemoi\src\draw.cpp
+1525400489 source:c:\users\admin\desktop\gamemoi\src\draw.cpp
 	"Draw.h"
 
-1525343922 c:\users\admin\desktop\gamemoi\include\draw.h
+1525400131 c:\users\admin\desktop\gamemoi\include\draw.h
 	<iostream>
 	"In4Game.h"
 	"DesignBrick.h"
 	"Check.h"
 	<ctime>
 
-1525340476 source:c:\users\admin\desktop\gamemoi\src\movebrick.cpp
+1525401527 source:c:\users\admin\desktop\gamemoi\src\movebrick.cpp
 	"MoveBrick.h"
 
-1525336208 c:\users\admin\desktop\gamemoi\include\movebrick.h
+1525401113 c:\users\admin\desktop\gamemoi\include\movebrick.h
 	"DesignBrick.h"
 	"Check.h"
 
-1525342041 source:c:\users\admin\desktop\gamemoi\src\check.cpp
+1525401524 source:c:\users\admin\desktop\gamemoi\src\check.cpp
 	"Check.h"
 
-1525336208 c:\users\admin\desktop\gamemoi\include\check.h
+1525401521 c:\users\admin\desktop\gamemoi\include\check.h
 
-1525336208 source:c:\users\admin\desktop\gamemoi\src\uploadgame.cpp
+1525401221 source:c:\users\admin\desktop\gamemoi\src\uploadgame.cpp
 	"UpLoadGame.h"
 
-1525336208 c:\users\admin\desktop\gamemoi\include\uploadgame.h
+1525401216 c:\users\admin\desktop\gamemoi\include\uploadgame.h
 	"Check.h"
 	"DesignBrick.h"
 
-1525337507 source:c:\users\admin\desktop\gamemoi\src\in4game.cpp
+1525401167 source:c:\users\admin\desktop\gamemoi\src\in4game.cpp
 	"In4Game.h"
 
-1525336208 c:\users\admin\desktop\gamemoi\include\in4game.h
+1525400819 c:\users\admin\desktop\gamemoi\include\in4game.h
 	<iostream>
 	"DesignBrick.h"
 	"Check.h"
@@ -142,14 +142,14 @@
 1525185740 source:c:\users\admin\desktop\gamemoi\src\playgame.cpp
 	"PlayGame.h"
 
-1525343983 source:c:\users\admin\desktop\gamemoi\src\logicgame.cpp
+1525413381 source:c:\users\admin\desktop\gamemoi\src\logicgame.cpp
 	"LogicGame.h"
 
-1525336681 c:\users\admin\desktop\gamemoi\include\logicgame.h
+1525413164 c:\users\admin\desktop\gamemoi\include\logicgame.h
 	"console.h"
 	"DesignBrick.h"
 	"Draw.h"
 	"MoveBrick.h"
-	"UpLoadGame.h"
 	"In4Game.h"
+	<fstream>
 

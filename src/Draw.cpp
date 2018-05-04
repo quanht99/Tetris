@@ -10,7 +10,7 @@ Draw::~Draw()
     //dtor
 }
 
-void Draw :: VeKhung()
+void Draw :: DrawFrame()
 {
     int i, j;
     for(i=4; i<=55; i++)
@@ -45,7 +45,7 @@ void Draw :: VeKhung()
         cout << tmp++;
     }
 }
-void Draw :: VeKhoiGach(KhoiGach* pkhoigach)
+void Draw :: DrawBrick(KhoiGach* pkhoigach)
 {
     int i, j;
     if(pkhoigach->Row==1 || pkhoigach->Row==4)
@@ -84,7 +84,7 @@ void Draw :: VeKhoiGach(KhoiGach* pkhoigach)
     }
 }
 
-void Draw :: XoaKhoiGach(KhoiGach* pkhoigach)
+void Draw :: DeleteBrick(KhoiGach* pkhoigach)
 {
     int i, j;
     for(i=0; i<pkhoigach->Row; i++)
@@ -150,10 +150,10 @@ void Draw :: DisplayBoard()
     }
 }
 
-void Draw :: Ve_Next(int ID)
+void Draw :: DrawBrick_Next(int ID)
 {
     KhoiGach *pnext=new KhoiGach;
-    pnext=DesignBrick::TaoKhoiGach(ID);
+    pnext=DesignBrick::CreatBrick(ID);
     if(pnext->Row==1 || pnext->Row==4)
         console::TextColor(14);
     if(pnext->Col==pnext->Row)
@@ -189,10 +189,10 @@ void Draw :: Ve_Next(int ID)
         }
 
     }
-    DesignBrick::HuyKhoiGach(pnext);
+    DesignBrick::Delete_Object(pnext);
 }
 
-void Draw :: Xoa_Next()
+void Draw :: DeleteBrick_Next()
 {
     for(int i=0; i<=20; i++)
     {

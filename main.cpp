@@ -13,7 +13,7 @@ int main()
 
     while(1)
     {
-        if(Play.VongGame()==1)
+        if(Play.LoopGame()==1)
         {
             char Kitu;
             cin >> Kitu;

@@ -19,7 +19,7 @@ void In4Game :: DrawScore(Thongtin infor)
     cout << "  LEVEL: " << (1100-infor.level)/100;
 }
 
-int In4Game :: KiemTra(KhoiGach *pkhoigach, Thongtin *inforgame)
+int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
 {
     int i,j,count, tmp=0;
     j=pkhoigach->Row-1;
@@ -36,7 +36,7 @@ int In4Game :: KiemTra(KhoiGach *pkhoigach, Thongtin *inforgame)
         if(count==10)
         {
             tmp++;
-            UpLoadGame :: CapNhatLaiToaDo(pkhoigach->jBoard+j);
+            UpLoadGame :: UpdateLocation(pkhoigach->jBoard+j);
         }
         else
         {
@@ -45,13 +45,13 @@ int In4Game :: KiemTra(KhoiGach *pkhoigach, Thongtin *inforgame)
     }
     while(j>=0);
     if(tmp==1)
-        In4Game ::capnhat(inforgame,20);
+        In4Game ::UpDateScore(inforgame,20);
     if(tmp==2)
-        In4Game ::capnhat(inforgame,45);
+        In4Game ::UpDateScore(inforgame,45);
     if(tmp==3)
-        In4Game ::capnhat(inforgame,70);
+        In4Game ::UpDateScore(inforgame,70);
     if(tmp==4)
-        In4Game ::capnhat(inforgame,100);
+        In4Game ::UpDateScore(inforgame,100);
     return 0;
 }
 
@@ -61,7 +61,7 @@ void In4Game :: CreatIn4(Thongtin *info)
     info->score=0;
 }
 
-bool In4Game :: capnhat(Thongtin *info, int score)
+bool In4Game :: UpDateScore(Thongtin *info, int score)
 {
     if(info->score>=(1099-info->level))
         info->level-=100;

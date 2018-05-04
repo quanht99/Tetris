@@ -4,8 +4,8 @@
 #include "DesignBrick.h"
 #include "Draw.h"
 #include "MoveBrick.h"
-#include "UpLoadGame.h"
 #include "In4Game.h"
+#include <fstream>
 
 
 
@@ -16,7 +16,11 @@ public:
     virtual ~LogicGame();
 
 
-    int VongGame();
+    int LoopGame();
+
+    void DrawGameOver(Thongtin, string);
+
+    void nhapDuLieu(string, Thongtin, string);
 
 protected:
 
