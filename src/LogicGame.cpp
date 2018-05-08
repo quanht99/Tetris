@@ -21,6 +21,7 @@ int LogicGame :: LoopGame()
     In4Game In4;
     Thongtin INFOR;
 
+    bool itplaying=true;
     string arr;
     clock_t Start, End;
     KhoiGach* curr;
@@ -29,23 +30,19 @@ int LogicGame :: LoopGame()
     //Lay thong tin nguoi choi
     console.gotoXY(60,5);
     cout << "Nhap Ten Nguoi Choi: ";
+//    cin.ignore();
+//    getline(cin, arr);
     cin >> arr;
     console.clrscr();
 
     //Bat Dau
     In4.CreatIn4(&INFOR);
     Draw1.DrawFrame();
+    DrawHightScore();
     srand(time(NULL));
     curr=Design.CreatBrick(Design.NumRandom());
 
-    //Khoi tao gia tri cho mang luu thong tin tro choi
-    for(int i=1; i<=20; i++)
-    {
-        for(int j=1; j<=10; j++)
-            Board[i][j]=0;
-    }
-
-    do
+    while(itplaying)
     {
         Draw1.DrawBrick(curr);
         In4.DrawScore(INFOR);
@@ -56,15 +53,15 @@ int LogicGame :: LoopGame()
         {
             if(_kbhit())
             {
-                char kitu=_getch();
+                char kiTu=_getch();
                 Draw1.DeleteBrick(curr);
-                if(kitu=='a' || kitu==75 )
+                if(kiTu=='a' || kiTu==75 )
                     Move1.moveLeft(curr);
-                if(kitu=='s' || kitu==80)
+                if(kiTu=='s' || kiTu==80)
                     Move1.moveDown(curr);
-                if(kitu=='d' || kitu==77)
+                if(kiTu=='d' || kiTu==77)
                     Move1.moveRight(curr);
-                if(kitu=='w' || kitu==72 )
+                if(kiTu=='w' || kiTu==72 )
                 {
                     Move1.turnBrick(curr);
                 }
@@ -73,13 +70,15 @@ int LogicGame :: LoopGame()
             End=clock();
         }
         while(End-Start<INFOR.level);
+
+
         Draw1.DeleteBrick(curr);
         if(Move1.moveDown(curr)!=1)
         {
             Upload.SaveValue(curr);
 
             if(In4.CkeckGame(curr, &INFOR)==-1)
-                break;
+                itplaying=false;
 
             Design.Delete_Object(curr);
             In4.DrawScore(INFOR);
@@ -87,18 +86,19 @@ int LogicGame :: LoopGame()
             IDKhoiTiepTheo=Design.NumRandom();
             Draw1.DisplayBoard();
         }
+
     }
-    while(1);
+
     Design.Delete_Object(curr);
     LogicGame::DrawGameOver(INFOR,arr);
-    return 1;
+    return 0;
 }
 
 void LogicGame :: DrawGameOver(Thongtin infor, string arr)
 {
     console console;
     console.clrscr();
-    LogicGame::nhapDuLieu(arr, infor,"HightScore.txt");
+    LogicGame::nhapDuLieu(arr, infor);
     console.TextColor(7);
     console.gotoXY(50,5);
     cout << "Ten: " << arr ;
@@ -110,11 +110,55 @@ void LogicGame :: DrawGameOver(Thongtin infor, string arr)
     cout << "Ban co muon tiep tuc choi(Y/N): ";
 }
 
-void LogicGame :: nhapDuLieu(string arr, Thongtin infor, string file)
+void LogicGame :: nhapDuLieu(string arr, Thongtin info)
 {
-    ofstream input;
-    input.open(file.c_str());
-    input << arr << " " << infor.score << endl;
-    input.close();
+    In4Player ng[6];
+    In4Player player;
+    int vitri;
+
+    player.name=arr;
+    player.score=info.score;
+
+    fstream file;
+    file.open("HightScore.txt");
+    for(int i = 0; i < 5 ; i++)
+    {
+        file >> ng[i].name;
+        file >> ng[i].score;
+    }
+    file.close();
+
+    for(int i=0;i<=4;i++)
+    {
+        if(ng[i].score < player.score)
+            {
+                vitri=i;
+                break;
+            }
+    }
+
+    for(int i=4;i>vitri;i--)
+    {
+        ng[i].name=ng[i-1].name;
+        ng[i].score=ng[i-1].score;
+    }
+    ng[vitri].name=arr;
+    ng[vitri].score=info.score;
+
+    for(int i = 0; i < 5 ; i++)
+    {
+        cout << ng[i].name << " " << ng[i].score << endl;
+    }
+
+    fstream input1;
+    input1.open("HightScore.txt");
+    for(int i=0; i<=4; i++)
+    {
+        input1 << ng[i].name << " ";
+        input1 << ng[i].score << endl;
+//        input << "abcd" << " ";
+//        input << 100*i << endl;
+    }
+    input1.close();
 }
 

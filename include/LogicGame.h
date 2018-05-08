@@ -7,8 +7,6 @@
 #include "In4Game.h"
 #include <fstream>
 
-
-
 class LogicGame:public Draw, public In4Game, public MoveBrick
 {
 public:
@@ -20,7 +18,7 @@ public:
 
     void DrawGameOver(Thongtin, string);
 
-    void nhapDuLieu(string, Thongtin, string);
+    void nhapDuLieu(string, Thongtin);
 
 protected:
 

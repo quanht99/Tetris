@@ -1,9 +1,10 @@
 #ifndef DESIGN_BRICK_H
 #define DESIGN_BRICK_H
-
+#include <iostream>
 #include<stdlib.h>
 #include "ctime"
 
+using namespace std;
 //Luu hinh dang cua khoi gach
 struct KhoiGach
 {

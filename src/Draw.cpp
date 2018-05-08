@@ -140,7 +140,7 @@ void Draw :: DisplayBoard()
                 {
                     for(int h=1; h<=5; h++)
                     {
-                        console::TextColor(11);
+                        console::TextColor(9);
                         console::gotoXY(i*5+h-1,j*2+k-1);
                         cout << char(219);
                     }
@@ -205,4 +205,25 @@ void Draw :: DeleteBrick_Next()
 
     }
 
+}
+
+void Draw :: DrawHightScore()
+{
+    In4Player ng[5];
+    fstream file;
+    file.open("HightScore.txt");
+    for(int i=0;i<=4;i++)
+    {
+        file >> ng[i].name;
+        file >> ng[i].score;
+    }
+    console::TextColor(10);
+    gotoXY(93,5);
+    cout << "HIGHT SCORE";
+    for(int i=0;i<=4;i++)
+    {
+
+        console::gotoXY(90,7+i);
+        cout << ng[i].name << " " << ng[i].score;
+    }
 }

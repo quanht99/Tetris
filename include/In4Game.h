@@ -15,6 +15,12 @@ struct Thongtin
     int score;
 };
 
+struct In4Player
+{
+    string name;
+    int score;
+};
+
 
 class In4Game:public UpLoadGame,public console
 {

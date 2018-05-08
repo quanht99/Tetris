@@ -2,7 +2,7 @@
 
 
 
-int Board[10][20];
+int Board[20][10];
 
 
 
@@ -26,7 +26,7 @@ bool Check :: CheckInside(int i,int j)  //Xem i,j có thuộc mảng Board[20][1
 
 bool Check :: CheckLeft(int i,int j)
 {
-    if(i>1 && Check::CheckInside(i,j)==true && Board[j][i-1]==0)
+    if(i>1 && Check::CheckInside(i,j)==true && Board[j][i-1]!=1)
         return true;
     else
         return false;
@@ -34,7 +34,7 @@ bool Check :: CheckLeft(int i,int j)
 
 bool Check :: CheckRight(int i,int j)
 {
-    if(i<10 && Check::CheckInside(i,j)==true && Board[j][i+1]==0)
+    if(i<10 && Check::CheckInside(i,j)==true && Board[j][i+1]!=1)
         return true;
     else
         return false;
@@ -42,7 +42,7 @@ bool Check :: CheckRight(int i,int j)
 
 bool Check :: CheckDown(int i,int j)
 {
-    if(j<20 && Check::CheckInside(i,j)==true && Board[j+1][i]==0)
+    if(j<20 && Check::CheckInside(i,j)==true && Board[j+1][i]!=1)
         return true;
     else
         return false;

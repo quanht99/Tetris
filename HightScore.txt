@@ -1,1 +1,5 @@
-Quan 0
+quandz 345
+quandzz 260
+tiendz 100
+Quanabcd 65
+quandz 20

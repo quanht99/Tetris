@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <stdlib.h>
 #include "LogicGame.h"
 #include "console.h"
 
@@ -10,19 +11,22 @@ int main()
 
     LogicGame Play;
     console console;
+    bool isplaying=true;
 
-    while(1)
+    while(isplaying)
     {
-        if(Play.LoopGame()==1)
+        if(Play.LoopGame()==0)
         {
-            char Kitu;
-            cin >> Kitu;
-            if(Kitu=='Y' || Kitu=='y')
+            char kiTu;
+            cin >> kiTu;
+            if(kiTu=='Y' || kiTu=='y')
             {
                 console.clrscr();
             }
-            if(Kitu=='N' || Kitu=='n')
-                break;
+            if(kiTu=='N' || kiTu=='n')
+            {
+                isplaying=false;
+            }
         }
     }
 

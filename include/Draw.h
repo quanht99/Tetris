@@ -5,6 +5,7 @@
 #include "DesignBrick.h"
 #include "Check.h"
 #include <ctime>
+#include "fstream"
 
 
 using namespace std;
@@ -26,6 +27,8 @@ public:
     void DrawBrick_Next(int ID);
 
     void DeleteBrick_Next();
+
+    void DrawHightScore();
 
 protected:
 

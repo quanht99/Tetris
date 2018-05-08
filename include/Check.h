@@ -1,7 +1,7 @@
 #ifndef CHECK_H
 #define CHECK_H
 
-extern int Board[10][20];
+extern int Board[20][10];
 
 class Check
 {
