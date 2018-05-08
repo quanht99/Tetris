@@ -40,6 +40,7 @@ int LogicGame :: LoopGame()
     Draw1.DrawFrame();
     DrawHightScore();
     srand(time(NULL));
+    console.Nocursortype();
     curr=Design.CreatBrick(Design.NumRandom());
 
     while(itplaying)

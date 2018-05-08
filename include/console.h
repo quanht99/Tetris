@@ -48,6 +48,7 @@ public:
 
     void TextColor (int color);
 
+    void Nocursortype();
 
 
 private:

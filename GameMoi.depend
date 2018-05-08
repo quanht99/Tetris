@@ -14,10 +14,10 @@
 	<stdlib.h>
 	"ctime"
 
-1525336218 source:c:\users\admin\desktop\gamemoi\src\console.cpp
+1525776920 source:c:\users\admin\desktop\gamemoi\src\console.cpp
 	"console.h"
 
-1525776920 c:\users\admin\desktop\gamemoi\include\console.h
+1525777741 c:\users\admin\desktop\gamemoi\include\console.h
 	<conio.h>
 	<ctime>
 	<cstdlib>
@@ -145,7 +145,7 @@
 1525185740 source:c:\users\admin\desktop\gamemoi\src\playgame.cpp
 	"PlayGame.h"
 
-1525776400 source:c:\users\admin\desktop\gamemoi\src\logicgame.cpp
+1525776920 source:c:\users\admin\desktop\gamemoi\src\logicgame.cpp
 	"LogicGame.h"
 
 1525754350 c:\users\admin\desktop\gamemoi\include\logicgame.h
