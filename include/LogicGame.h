@@ -7,6 +7,7 @@
 #include "In4Game.h"
 #include <fstream>
 
+
 class LogicGame:public Draw, public In4Game, public MoveBrick
 {
 public:

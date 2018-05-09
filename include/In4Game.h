@@ -6,6 +6,8 @@
 
 #include "UpLoadGame.h"
 #include "console.h"
+#include <MMSystem.h>
+
 
 using namespace std;
 

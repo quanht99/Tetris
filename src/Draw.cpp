@@ -217,13 +217,14 @@ void Draw :: DrawHightScore()
         file >> ng[i].name;
         file >> ng[i].score;
     }
-    console::TextColor(10);
-    gotoXY(93,5);
+    console::TextColor(7);
+    gotoXY(130,5);
     cout << "HIGHT SCORE";
     for(int i=0;i<=4;i++)
     {
-
-        console::gotoXY(90,7+i);
-        cout << ng[i].name << " " << ng[i].score;
+        console::gotoXY(120,7+i*2);
+        cout << ng[i].name;
+        console::gotoXY(140,7+2*i);
+        cout << ng[i].score;
     }
 }

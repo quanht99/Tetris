@@ -28,12 +28,21 @@ int LogicGame :: LoopGame()
     int IDKhoiTiepTheo=Design.NumRandom();
 
     //Lay thong tin nguoi choi
-    console.gotoXY(60,5);
-    cout << "Nhap Ten Nguoi Choi: ";
-//    cin.ignore();
-//    getline(cin, arr);
-    cin >> arr;
+    console.gotoXY(90,20);
+    cout << "Nhap Ten Nguoi Choi(viet lien khong dau): ";
+    cin.ignore();
+    getline(cin, arr);
+    //cin >> arr;
     console.clrscr();
+
+    //Khoi tao mang luu gia tri
+    for(int i=0;i<=20;i++)
+    {
+        for(int j=0;j<=10;j++)
+        {
+            Board[i][j]=0;
+        }
+    }
 
     //Bat Dau
     In4.CreatIn4(&INFOR);
@@ -71,8 +80,6 @@ int LogicGame :: LoopGame()
             End=clock();
         }
         while(End-Start<INFOR.level);
-
-
         Draw1.DeleteBrick(curr);
         if(Move1.moveDown(curr)!=1)
         {
@@ -99,6 +106,7 @@ void LogicGame :: DrawGameOver(Thongtin infor, string arr)
 {
     console console;
     console.clrscr();
+
     LogicGame::nhapDuLieu(arr, infor);
     console.TextColor(7);
     console.gotoXY(50,5);
@@ -157,8 +165,6 @@ void LogicGame :: nhapDuLieu(string arr, Thongtin info)
     {
         input1 << ng[i].name << " ";
         input1 << ng[i].score << endl;
-//        input << "abcd" << " ";
-//        input << 100*i << endl;
     }
     input1.close();
 }

@@ -50,7 +50,6 @@ public:
 
     void Nocursortype();
 
-
 private:
 };
 

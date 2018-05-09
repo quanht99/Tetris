@@ -37,6 +37,7 @@ int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
         {
             tmp++;
             UpLoadGame :: UpdateLocation(pkhoigach->jBoard+j);
+            PlaySound(TEXT("sound1.wav"), NULL, SND_ASYNC);
         }
         else
         {
@@ -52,6 +53,7 @@ int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
         In4Game ::UpDateScore(inforgame,70);
     if(tmp==4)
         In4Game ::UpDateScore(inforgame,100);
+
     return 0;
 }
 
