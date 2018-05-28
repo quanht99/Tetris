@@ -1,4 +1,4 @@
-#Tên trò chơi: Tetris
+# Tên trò chơi: Tetris
 
 Tác giả: Hạp Tiến Quân
 
