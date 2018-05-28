@@ -1,29 +1,38 @@
-#ifndef PLAYGAME_H
-#define PLAYGAME_H
+#ifndef LOGICGAME_H
+#define LOGICGAME_H
 #include "console.h"
-#include "DesignBrick.h"
-#include "Draw.h"
-#include "MoveBrick.h"
+#include "IBrick.h"
+#include "IDisPlayGame.h"
+#include "IPlayer.h"
 #include "In4Game.h"
 #include <fstream>
 
 
-class LogicGame:public Draw, public In4Game, public MoveBrick
+class logicGame:public IDisPlayGame, public In4Game, public IPlayer
 {
 public:
-    LogicGame();
-    virtual ~LogicGame();
+    logicGame();
+    virtual ~logicGame();
 
 
-    int LoopGame();
+    int loopGame();
+    /*
+        cách thức hoạt động của game. Dùng để chơi game nhiều lần mà không cần thoát ra chạy lại
+    */
 
-    void DrawGameOver(Thongtin, string);
+    void DrawGameOver(in4Game, string);
+    /*
+        In ra thông báo trò chơi đã kết thúc
+    */
 
-    void nhapDuLieu(string, Thongtin);
+    void takeData(string, in4Game);
+    /*
+        Lấy thông tin gồm tên và điểm số của người chơi sau khi bị game over
+    */
 
 protected:
 
 private:
 };
 
-#endif // PLAYGAME_H
+#endif // LOGICGAME_H

@@ -16,7 +16,7 @@ Check::~Check()
     //dtor
 }
 
-bool Check :: CheckInside(int i,int j)  //Xem i,j có thuộc mảng Board[20][10] hay không?
+bool Check :: checkInside(int i,int j)
 {
     if(i>=1 && i<=10 && j>=1 && j<=20)
         return true;
@@ -24,25 +24,25 @@ bool Check :: CheckInside(int i,int j)  //Xem i,j có thuộc mảng Board[20][1
         return false;
 }
 
-bool Check :: CheckLeft(int i,int j)
+bool Check :: checkLeft(int i,int j)
 {
-    if(i>1 && Check::CheckInside(i,j)==true && Board[j][i-1]!=1)
+    if(i>1 && Check::checkInside(i,j)==true && Board[j][i-1]!=1)
         return true;
     else
         return false;
 }
 
-bool Check :: CheckRight(int i,int j)
+bool Check :: checkRight(int i,int j)
 {
-    if(i<10 && Check::CheckInside(i,j)==true && Board[j][i+1]!=1)
+    if(i<10 && Check::checkInside(i,j)==true && Board[j][i+1]!=1)
         return true;
     else
         return false;
 }
 
-bool Check :: CheckDown(int i,int j)
+bool Check :: checkDown(int i,int j)
 {
-    if(j<20 && Check::CheckInside(i,j)==true && Board[j+1][i]!=1)
+    if(j<20 && Check::checkInside(i,j)==true && Board[j+1][i]!=1)
         return true;
     else
         return false;

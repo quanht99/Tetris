@@ -9,14 +9,25 @@ public:
     Check();
     virtual ~Check();
 
-    bool CheckInside(int i,int j);
+    bool checkInside(int i,int j);
+    /*
+        kiểm tra xem 1 ô gạch của khối gạch đó có nằm trong khung hay không
+    */
 
-    bool CheckLeft(int i,int j);
+    bool checkLeft(int i,int j);
+    /*
+        kiểm tra xem bên trái của ô gạch đang xét có khối nào khác hay k
+    */
 
-    bool CheckRight(int i,int j);
+    bool checkRight(int i,int j);
+    /*
+        kiểm tra xem bên phải của ô gạch đang xét có khối nào khác hay k
+    */
 
-    bool CheckDown(int i,int j);
-
+    bool checkDown(int i,int j);
+    /*
+        kiểm tra xem bên dưới của ô gạch đang xét có khối nào khác hay k
+    */
 protected:
 
 private:

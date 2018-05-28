@@ -42,13 +42,13 @@ public:
     console();
     virtual ~console();
 
-    void clrscr();
+    void clrscr(); // xóa màn hình
 
-    void gotoXY (int column, int line);
+    void gotoXY (int column, int line);  // di chuyển đến tọa độ (column,line) trong bảng
 
-    void TextColor (int color);
+    void TextColor (int color);  // sử dụng màu để đổ vào kí tự được in ra
 
-    void Nocursortype();
+    void deletePointer(); // xóa con trỏ trên màn hình console
 
 private:
 };

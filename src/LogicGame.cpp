@@ -1,114 +1,115 @@
-#include "LogicGame.h"
+#include "logicGame.h"
 
 
-LogicGame::LogicGame()
+logicGame::logicGame()
 {
     //ctor
 }
 
-LogicGame::~LogicGame()
+logicGame::~logicGame()
 {
     //dtor
 }
 
-int LogicGame :: LoopGame()
+int logicGame :: loopGame()
 {
-    MoveBrick Move1;
-    DesignBrick Design;
-    Draw Draw1;
-    UpLoadGame Upload;
+    IPlayer classMove;
+    IBrick classBrick;
+    IDisPlayGame classDisPlayGame;
+    upLoadGame classUpLoadGame;
     console console;
-    In4Game In4;
-    Thongtin INFOR;
+    In4Game classIn4Game;
+    in4Game INFOR;
 
-    bool itplaying=true;
+    bool itPlaying=true;
     string arr;
     clock_t Start, End;
-    KhoiGach* curr;
-    int IDKhoiTiepTheo=Design.NumRandom();
+    Brick* curr;
+    int IDKhoiTiepTheo=classBrick.numRanDom();
 
     //Lay thong tin nguoi choi
     console.gotoXY(90,20);
     cout << "Nhap Ten Nguoi Choi(viet lien khong dau): ";
-    cin.ignore();
-    getline(cin, arr);
-    //cin >> arr;
+    //cin.ignore();
+    //getline(cin, arr);
+    cin >> arr;
     console.clrscr();
 
     //Khoi tao mang luu gia tri
-    for(int i=0;i<=20;i++)
+    for(int i=0; i<=20; i++)
     {
-        for(int j=0;j<=10;j++)
+        for(int j=0; j<=10; j++)
         {
             Board[i][j]=0;
         }
     }
 
     //Bat Dau
-    In4.CreatIn4(&INFOR);
-    Draw1.DrawFrame();
-    DrawHightScore();
+    classIn4Game.creatIn4Game(&INFOR);
+    classDisPlayGame.drawFrame();
+    drawHightScore();
     srand(time(NULL));
-    console.Nocursortype();
-    curr=Design.CreatBrick(Design.NumRandom());
-
-    while(itplaying)
+    console.deletePointer();
+    curr=classBrick.creatBrick(classBrick.numRanDom());
+    while(itPlaying)
     {
-        Draw1.DrawBrick(curr);
-        In4.DrawScore(INFOR);
-        Draw1.DeleteBrick_Next();
-        Draw1.DrawBrick_Next(IDKhoiTiepTheo);
+
+        classDisPlayGame.drawBrick(curr);
+        classIn4Game.drawScore(INFOR);
+        classDisPlayGame.deleteBrickNext();
+        classDisPlayGame.drawBrickNext(IDKhoiTiepTheo);
         Start=clock();
         do
         {
             if(_kbhit())
             {
-                char kiTu=_getch();
-                Draw1.DeleteBrick(curr);
-                if(kiTu=='a' || kiTu==75 )
-                    Move1.moveLeft(curr);
-                if(kiTu=='s' || kiTu==80)
-                    Move1.moveDown(curr);
-                if(kiTu=='d' || kiTu==77)
-                    Move1.moveRight(curr);
-                if(kiTu=='w' || kiTu==72 )
+                char click=_getch();
+                classDisPlayGame.deleteBrick(curr);
+                if(click=='a' || click==75 )
+                    classMove.moveLeft(curr);
+                if(click=='s' || click==80)
+                    classMove.moveDown(curr);
+                if(click=='d' || click==77)
+                    classMove.moveRight(curr);
+                if(click=='w' || click==72 )
                 {
-                    Move1.turnBrick(curr);
+                    classMove.turnBrick(curr);
                 }
-                Draw1.DrawBrick(curr);
+                classDisPlayGame.drawBrick(curr);
             }
+
             End=clock();
         }
         while(End-Start<INFOR.level);
-        Draw1.DeleteBrick(curr);
-        if(Move1.moveDown(curr)!=1)
+        classDisPlayGame.deleteBrick(curr);
+        if(classMove.moveDown(curr)!=1)
         {
-            Upload.SaveValue(curr);
+            classUpLoadGame.saveValue(curr);
 
-            if(In4.CkeckGame(curr, &INFOR)==-1)
-                itplaying=false;
+            if(classIn4Game.checkGame(curr, &INFOR)==-1)
+                itPlaying=false;
 
-            Design.Delete_Object(curr);
-            In4.DrawScore(INFOR);
-            curr=Design.CreatBrick(IDKhoiTiepTheo);
-            IDKhoiTiepTheo=Design.NumRandom();
-            Draw1.DisplayBoard();
+            classBrick.deleteObject(curr);
+            classIn4Game.drawScore(INFOR);
+            curr=classBrick.creatBrick(IDKhoiTiepTheo);
+            IDKhoiTiepTheo=classBrick.numRanDom();
+            classDisPlayGame.disPlayBoard();
         }
 
     }
 
-    Design.Delete_Object(curr);
-    LogicGame::DrawGameOver(INFOR,arr);
+    classBrick.deleteObject(curr);
+    logicGame::DrawGameOver(INFOR,arr);
     return 0;
 }
 
-void LogicGame :: DrawGameOver(Thongtin infor, string arr)
+void logicGame :: DrawGameOver(in4Game infor, string arr)
 {
     console console;
     console.clrscr();
 
-    LogicGame::nhapDuLieu(arr, infor);
-    console.TextColor(7);
+    logicGame::takeData(arr, infor);
+    console.TextColor(ColorCode_DarkWhite);
     console.gotoXY(50,5);
     cout << "Ten: " << arr ;
     console.gotoXY(50,6);
@@ -119,11 +120,11 @@ void LogicGame :: DrawGameOver(Thongtin infor, string arr)
     cout << "Ban co muon tiep tuc choi(Y/N): ";
 }
 
-void LogicGame :: nhapDuLieu(string arr, Thongtin info)
+void logicGame :: takeData(string arr, in4Game info)
 {
-    In4Player ng[6];
-    In4Player player;
-    int vitri;
+    in4Player ng[6];
+    in4Player player;
+    int vitri=6;
 
     player.name=arr;
     player.score=info.score;
@@ -137,27 +138,22 @@ void LogicGame :: nhapDuLieu(string arr, Thongtin info)
     }
     file.close();
 
-    for(int i=0;i<=4;i++)
+    for(int i=0; i<=4; i++)
     {
         if(ng[i].score < player.score)
-            {
-                vitri=i;
-                break;
-            }
+        {
+            vitri=i;
+            break;
+        }
     }
 
-    for(int i=4;i>vitri;i--)
+    for(int i=4; i>vitri; i--)
     {
         ng[i].name=ng[i-1].name;
         ng[i].score=ng[i-1].score;
     }
-    ng[vitri].name=arr;
-    ng[vitri].score=info.score;
-
-    for(int i = 0; i < 5 ; i++)
-    {
-        cout << ng[i].name << " " << ng[i].score << endl;
-    }
+    ng[vitri].name=player.name;
+    ng[vitri].score=player.score;
 
     fstream input1;
     input1.open("HightScore.txt");

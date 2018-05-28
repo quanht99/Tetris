@@ -10,16 +10,16 @@ In4Game::~In4Game()
     //dtor
 }
 
-void In4Game :: DrawScore(Thongtin infor)
+void In4Game :: drawScore(in4Game infor)
 {
-    console::TextColor(15);
+    console::TextColor(ColorCode_White);
     console::gotoXY(70,15);
     cout << "  SCORE: " << infor.score;
     console::gotoXY(70,16);
     cout << "  LEVEL: " << (1100-infor.level)/100;
 }
 
-int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
+int In4Game :: checkGame(Brick *pkhoigach, in4Game *inforgame)
 {
     int i,j,count, tmp=0;
     j=pkhoigach->Row-1;
@@ -36,7 +36,7 @@ int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
         if(count==10)
         {
             tmp++;
-            UpLoadGame :: UpdateLocation(pkhoigach->jBoard+j);
+            upLoadGame :: upDateLocation(pkhoigach->jBoard+j);
             PlaySound(TEXT("sound1.wav"), NULL, SND_ASYNC);
         }
         else
@@ -46,24 +46,25 @@ int In4Game :: CkeckGame(KhoiGach *pkhoigach, Thongtin *inforgame)
     }
     while(j>=0);
     if(tmp==1)
-        In4Game ::UpDateScore(inforgame,20);
+        In4Game ::upDateScore(inforgame,20);
     if(tmp==2)
-        In4Game ::UpDateScore(inforgame,45);
+        In4Game ::upDateScore(inforgame,45);
     if(tmp==3)
-        In4Game ::UpDateScore(inforgame,70);
+        In4Game ::upDateScore(inforgame,70);
     if(tmp==4)
-        In4Game ::UpDateScore(inforgame,100);
+        In4Game ::upDateScore(inforgame,100);
 
     return 0;
 }
 
-void In4Game :: CreatIn4(Thongtin *info)
+void In4Game :: creatIn4Game(in4Game *info)
 {
     info->level=1000;
     info->score=0;
 }
 
-bool In4Game :: UpDateScore(Thongtin *info, int score)
+bool In4Game :: upDateScore(in4Game *info, int score)
+
 {
     if(info->score>=(1099-info->level))
         info->level-=100;

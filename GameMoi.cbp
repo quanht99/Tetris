@@ -35,22 +35,22 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Check.h" />
-		<Unit filename="include/DesignBrick.h" />
-		<Unit filename="include/Draw.h" />
+		<Unit filename="include/IBrick.h" />
+		<Unit filename="include/IDisPlayGame.h" />
+		<Unit filename="include/IPlayer.h" />
 		<Unit filename="include/In4Game.h" />
-		<Unit filename="include/LogicGame.h" />
-		<Unit filename="include/MoveBrick.h" />
-		<Unit filename="include/UpLoadGame.h" />
 		<Unit filename="include/console.h" />
+		<Unit filename="include/logicGame.h" />
+		<Unit filename="include/upLoadGame.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Brick.cpp" />
 		<Unit filename="src/Check.cpp" />
-		<Unit filename="src/DesignBrick.cpp" />
-		<Unit filename="src/Draw.cpp" />
+		<Unit filename="src/DisPlayGame.cpp" />
 		<Unit filename="src/In4Game.cpp" />
-		<Unit filename="src/LogicGame.cpp" />
-		<Unit filename="src/MoveBrick.cpp" />
-		<Unit filename="src/UpLoadGame.cpp" />
+		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/console.cpp" />
+		<Unit filename="src/logicGame.cpp" />
+		<Unit filename="src/upLoadGame.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

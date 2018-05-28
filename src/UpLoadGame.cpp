@@ -1,16 +1,16 @@
-#include "UpLoadGame.h"
+#include "upLoadGame.h"
 
-UpLoadGame::UpLoadGame()
+upLoadGame::upLoadGame()
 {
     //ctor
 }
 
-UpLoadGame::~UpLoadGame()
+upLoadGame::~upLoadGame()
 {
     //dtor
 }
 
-void UpLoadGame :: UpdateLocation(int hang)
+void upLoadGame :: upDateLocation(int hang)
 {
     int i,j;
     for(i=hang; i>1; i--)
@@ -20,7 +20,7 @@ void UpLoadGame :: UpdateLocation(int hang)
         }
 }
 
-void UpLoadGame :: SaveValue(KhoiGach* pkhoigach)
+void upLoadGame :: saveValue(Brick* pkhoigach)
 {
     for(int i=0; i<pkhoigach->Row; i++)
         for(int j=0; j<pkhoigach->Col; j++)
